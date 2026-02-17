@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Toolkit</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Expense Toolkit</h1>
+            <p class="subtitle">Click a tool. Results appear below.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Tools</h2>
+
+            <div class="cards" id="toolCards">
+                <article class="card">
+                    <h3>Total Spending</h3>
+                    <p class="card-desc">Adds up all valid expense amounts.</p>
+                    <button type="button" class="btn" data-tool="calcTotal">Run</button>
+                    <pre class="output" id="out-calcTotal" aria-live="polite"></pre>
+                </article>
+
+                <article class="card">
+                    <h3>Average Purchase</h3>
+                    <p class="card-desc">Average of valid expense amounts.</p>
+                    <button type="button" class="btn" data-tool="calcAverage">Run</button>
+                    <pre class="output" id="out-calcAverage" aria-live="polite"></pre>
+                </article>
+
+                <article class="card">
+                    <h3>Largest Purchase</h3>
+                    <p class="card-desc">Finds the largest expense and shows details.</p>
+                    <button type="button" class="btn" data-tool="findLargest">Run</button>
+                    <pre class="output" id="out-findLargest" aria-live="polite"></pre>
+                </article>
+
+                <article class="card">
+                    <h3>Day Spent the Most</h3>
+                    <p class="card-desc">Finds the day with the highest total spending.</p>
+                    <button type="button" class="btn" data-tool="daySpentMost">Run</button>
+                    <pre class="output" id="out-daySpentMost" aria-live="polite"></pre>
+                </article>
+
+                <article class="card">
+                    <h3>Category Breakdown</h3>
+                    <p class="card-desc">Totals spending by category.</p>
+                    <button type="button" class="btn" data-tool="totalsByCategory">Run</button>
+                    <pre class="output" id="out-totalsByCategory" aria-live="polite"></pre>
+                </article>
+
+                <article class="card">
+                    <h3>Purchases Per Day</h3>
+                    <p class="card-desc">Counts how many purchases happened each day.</p>
+                    <button type="button" class="btn" data-tool="purchasesPerDay">Run</button>
+                    <pre class="output" id="out-purchasesPerDay" aria-live="polite"></pre>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Troubleshooting</h2>
+            <p class="hint">
+                If nothing happens when you click, open DevTools Console to help debug.
+                Make sure you are running with the Live Server VS extension.
+            </p>
+        </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
