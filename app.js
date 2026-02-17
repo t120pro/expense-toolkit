@@ -1,4 +1,6 @@
-const expenses = [];
+import { expenses } from "./expenses.js";
+
+console.log("app.js loaded", expenses);
 
 document.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-tool]");
