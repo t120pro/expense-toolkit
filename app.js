@@ -60,5 +60,33 @@ function totalsByCategory(expensesArr) {
 
 /* 6) Purchases per day (counts per day) */
 function purchasesPerDay(expensesArr) {
-    return "";
+    let sun=0;
+    let mon=0;
+    let tues=0;
+    let wed=0;
+    let thurs=0;
+    let fri=0;
+    let sat=0;
+    console.log(expensesArr);
+    for(let expense of expensesArr){
+        console.log(expense.day);
+    switch (expense.day) {
+    case "Sun":
+        sun+=expense.amount;    
+    case "Mon":
+        mon+=expense.amount;
+    case "Tue":
+        tues+=expense.amount;
+    case "Wed":
+        wed+=expense.amount;
+    case "Thu":
+        thurs+=expense.amount;
+    case "Fri":
+        fri+=expense.amount;
+    case "Sat":
+        sat+=expense.amount;
+    
+    }   
+    }
+    return("Sunday: $"+Math.round(sun)+" Monday: $"+Math.round(mon)+" Tuesday: $"+Math.round(tues)+" Wensday: $"+Math.round(wed)+" Thursday: $"+Math.round(thurs)+" Friday: $"+Math.round(fri)+" Satarday: $"+Math.round(sat))
 }
