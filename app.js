@@ -40,7 +40,13 @@ function calcTotal(expensesArr) {
 
 /* 2) Average purchase */
 function calcAverage(expensesArr) {
-    return "";
+    let sum=0;
+    for (let i=0; i<expensesArr.length; i++){
+        sum+= expensesArr[i].amount;
+    }
+    let average= sum/expensesArr.length;
+    average=Math.round(average);
+    return "Average: "+average;
 }
 
 /* 3) Largest purchase (with details) */
