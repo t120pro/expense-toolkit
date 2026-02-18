@@ -35,7 +35,11 @@ function setCardOutput(toolId, text) {
 
 /* 1) Total spending */
 function calcTotal(expensesArr) {
-    return "";
+    let total=0;
+    for(let expenses of expensesArr){
+        total+=expenses.amount;
+    }
+    return "The total expenses are: $"+total;
 }
 
 /* 2) Average purchase */
