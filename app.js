@@ -56,7 +56,7 @@ function daySpentMost(expensesArr) {
 /* 5) Category breakdown (totals per category) */
 function totalsByCategory(expensesArr) {
     let food = 0, transport = 0, entertainment = 0, rent = 0, school = 0, 
-        shopping = 0, subscription = 0, misc = 0, groceries = 0;
+        shopping = 0, subscription = 0, misc = 0;
     for (const expense of expensesArr) {
         switch (expense.category) {
             case "food":
@@ -83,14 +83,10 @@ function totalsByCategory(expensesArr) {
             case "misc":
                 misc += expense.amount;
                 break;
-            case "groceries":
-                groceries += expense.amount;
-                break;
         }
     }
-    return `You spend $${food} on food, $${transport} on transport, $${entertainment} on entertainment, ` + 
-    `$${rent} on rent, $${school} on school, $${shopping} on shopping, $${subscription} on subscriptions, ` +
-    `$${groceries} on groceries, and $${misc} on miscellaneous.`;
+    return `You spent $${food} on food, $${transport} on transport, $${entertainment} on entertainment, $${rent} on rent, ` +
+    `$${school} on school, $${shopping} on shopping, $${subscription} on subscriptions, and $${misc} on miscellaneous.`;
 }
 
 /* 6) Purchases per day (counts per day) */
