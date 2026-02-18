@@ -50,7 +50,27 @@ function findLargest(expensesArr) {
 
 /* 4) Day you spent the most (by total dollars) */
 function daySpentMost(expensesArr) {
-    return "";
+    let totals = {};
+    for (let i =0; i < expensesArr.length; i++){
+        let day = expensesArr[i].day;
+        let amount = expensesArr[i].amount;
+
+        if (totals[day]== undefined){
+            totals[day] = amount;
+        }else{
+            totals[day] += amount
+        }
+    }
+    let maxTotal = 0;
+    let maxDay = "";
+    for( let day in totals){
+        if (totals[day] > maxTotal){
+            maxTotal = totals[day];
+            maxDay = day;
+        }
+    }
+    
+    return "The day the most was spent was " + maxDay;
 }
 
 /* 5) Category breakdown (totals per category) */
