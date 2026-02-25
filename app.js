@@ -43,11 +43,27 @@ function calcAverage(expensesArr) {
     return "";
 }
 
-/* 3) Largest purchase (with details) */
 function findLargest(expensesArr) {
-    return "";
-}
+    if (expensesArr.length === 0) return null;
 
+    let largest = null;
+
+    for (let i = 0; i < expensesArr.length; i++) {
+        let current = expensesArr[i];
+
+        if (typeof current.amount !== "number") {
+            continue; 
+        }
+
+        if (largest === null || current.amount > largest.amount) {
+            largest = current;
+        }
+    }
+
+    if (largest === null) return null;
+
+    return `$${largest.amount.toFixed(2)} ${largest.category} (${largest.note || ""}) on ${largest.day || "?"}`;
+}
 /* 4) Day you spent the most (by total dollars) */
 function daySpentMost(expensesArr) {
     return "";
